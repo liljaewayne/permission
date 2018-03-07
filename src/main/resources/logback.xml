@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- scan: 使logback的配置文件支持热加载 -->
+<configuration scan="true" scanPeriod="60 seconds">
+    <!-- 以何种形式进行输出, 可以配置多个 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n</pattern>
+        </encoder>
+    </appender>
+    
+    <!--<appender name="permission" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${catalina.home}/logs/permission.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${catalina.home}/logs/permission.%d{yyyy-MM-dd}.log.gz</FileNamePattern>
+        </rollingPolicy>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n</pattern>
+        </layout>
+        
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n</pattern>
+        </encoder>
+    </appender>-->
+
+    <!-- 可以配置多个 -->
+    <!--<logger name="xxx" level="INFO">
+        <appender-ref ref="permission"></appender-ref>
+    </logger>-->
+
+    <!-- 配置appender要使用什么级别接收日志, 只能配置一个 -->
+    <root level="INFO">
+        <!--
+        TRACE < DEBUG < INFO < WARN < ERROR
+        -->
+        <appender-ref ref="STDOUT"></appender-ref>
+    </root>
+
+
+</configuration>

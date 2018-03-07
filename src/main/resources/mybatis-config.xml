@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- @see org.apache.ibatis.session.Configuration -->
+    <settings>
+        <setting name="safeRowBoundsEnabled" value="true"/>
+        <setting name="cacheEnabled" value="false"/>
+        <setting name="useGeneratedKeys" value="true"/>
+    </settings>
+
+    <!-- 别名 -->
+    <!--<typeAliases>
+        <typeAlias type="top.liujianwei.model.XxxDO" alias="x"></typeAlias>
+    </typeAliases>-->
+
+    <!-- 在sql执行前后展开切面进行监听 -->
+    <!--<plugins>
+        <plugin interceptor=""></plugin>
+    </plugins>-->
+
+    <!--
+    数据库中查出来的值与实体属性无法映射的时候, 可以将数据库中查出来的数据通过typeHandler转化成一个指定的对象
+        比如: 数据库中查出来一个整形数字, 而实体中该字段是一个枚举类型, 就可以通过typeHandler将其转化成枚举并set到实体中
+    -->
+    <!--<typeHandlers>
+        <typeHandler handler=""></typeHandler>
+    </typeHandlers>-->
+</configuration>
