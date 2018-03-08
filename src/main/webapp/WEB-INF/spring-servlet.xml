@@ -18,6 +18,10 @@
     -->
     <mvc:annotation-driven></mvc:annotation-driven>
 
+    <mvc:interceptors>
+        <bean class="top.liujianwei.common.HttpInterceptor"></bean>
+    </mvc:interceptors>
+
     <!-- 指定特定包下的类进行注解扫描 -->
     <context:component-scan base-package="top.liujianwei.controller"></context:component-scan>
     <context:component-scan base-package="top.liujianwei.service"></context:component-scan>

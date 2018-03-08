@@ -86,7 +86,29 @@
             <version>1.16.12</version>
         </dependency>
 
-        <!-- jackson -->
+
+        <!--
+        Jackson fasterxml和codehaus的区别：
+        他们是Jackson的两大分支、也是两个版本的不同包名。Jackson从2.0开始改用新的包名fasterxml；1.x版本的包名是codehaus。除了包名不同，他们的Maven artifact id也不同。1.x版本现在只提供bug-fix，而2.x版本还在不断开发和发布中。如果是新项目，建议直接用2x，即fasterxml jackson。
+        
+        
+        P.S.
+        
+        Jackson可以轻松的将Java对象转换成json对象和xml文档，同样也可以将json、xml转换成Java对象。
+        官网：http://wiki.fasterxml.com/JacksonHome
+        
+        三个主要的模块：
+        jackson-core：核心包
+        jackson-annotations：注解包
+        jackson-databind：数据绑定包
+        jackson-databind需要引用另外两个包，所以如果项目中需要jackson-databind，则只需要加入它的dependency就行了，其他两个会自动引入：
+          <dependency>
+           <groupId>com.fasterxml.jackson.core</groupId>
+           <artifactId>jackson-databind</artifactId>
+           <version>2.5.3</version>
+          </dependency>
+        -->
+
         <dependency>
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-guava</artifactId>
@@ -98,6 +120,18 @@
             <artifactId>jackson-dataformat-avro</artifactId>
             <version>2.9.0</version>
         </dependency>
+
+        <!-- old jackson avro already dependent -->
+        <!--<dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-core-asl</artifactId>
+            <version>1.9.13</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>1.9.13</version>
+        </dependency>-->
 
         <!-- logback -->
         <dependency>
@@ -123,6 +157,32 @@
             <groupId>org.apache.tomcat</groupId>
             <artifactId>jsp-api</artifactId>
             <version>6.0.36</version>
+        </dependency>
+
+        <!-- validator -->
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>1.1.0.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>5.2.4.Final</version>
+        </dependency>
+
+        <!-- 工具类 -->
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.10</version>
         </dependency>
 
     </dependencies>
