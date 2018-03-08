@@ -4,16 +4,20 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import top.liujianwei.common.ServerResponse;
 
 @Controller
 @RequestMapping("/test")
 @Slf4j
 public class TestController {
-    @RequestMapping("/hello")
+
+    @RequestMapping("/hello.json")
     @ResponseBody
-    public String hello() {
-        log.info("hello");
-        return "hello, permission";
+    public ServerResponse hello() {
+
+//        throw new RuntimeException("test exception");
+
+        return ServerResponse.createBySuccess("hello, permission");
     }
 
 }
