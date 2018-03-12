@@ -25,7 +25,7 @@ public class SysAcl {
 
     private Date operatorTime;
 
-    private String operateId;
+    private String operateIp;
 
     public Integer getId() {
         return id;
@@ -115,11 +115,11 @@ public class SysAcl {
         this.operatorTime = operatorTime;
     }
 
-    public String getOperateId() {
-        return operateId;
+    public String getOperateIp() {
+        return operateIp;
     }
 
-    public void setOperateId(String operateId) {
-        this.operateId = operateId == null ? null : operateId.trim();
+    public void setOperateIp(String operateIp) {
+        this.operateIp = operateIp == null ? null : operateIp.trim();
     }
 }

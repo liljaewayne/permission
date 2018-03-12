@@ -13,7 +13,7 @@
         <result column="remark" property="remark" jdbcType="VARCHAR"/>
         <result column="operator" property="operator" jdbcType="VARCHAR"/>
         <result column="operator_time" property="operatorTime" jdbcType="TIMESTAMP"/>
-        <result column="operate_id" property="operateId" jdbcType="VARCHAR"/>
+        <result column="operate_id" property="operateIp" jdbcType="VARCHAR"/>
     </resultMap>
     <sql id="Base_Column_List">
         id, code, name, acl_module_id, url, type, status, seq, remark, operator, operator_time,
@@ -38,7 +38,7 @@
         VALUES (#{id,jdbcType=INTEGER}, #{code,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
                                         #{aclModuleId,jdbcType=INTEGER}, #{url,jdbcType=VARCHAR}, #{type,jdbcType=INTEGER},
                                         #{status,jdbcType=INTEGER}, #{seq,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR},
-                                        #{operator,jdbcType=VARCHAR}, #{operatorTime,jdbcType=TIMESTAMP}, #{operateId,jdbcType=VARCHAR}
+                                        #{operator,jdbcType=VARCHAR}, #{operatorTime,jdbcType=TIMESTAMP}, #{operateIp,jdbcType=VARCHAR}
         )
     </insert>
     <insert id="insertSelective" parameterType="top.liujianwei.model.SysAcl">
@@ -77,7 +77,7 @@
             <if test="operatorTime != null">
                 operator_time,
             </if>
-            <if test="operateId != null">
+            <if test="operateIp != null">
                 operate_id,
             </if>
         </trim>
@@ -115,8 +115,8 @@
             <if test="operatorTime != null">
                 #{operatorTime,jdbcType=TIMESTAMP},
             </if>
-            <if test="operateId != null">
-                #{operateId,jdbcType=VARCHAR},
+            <if test="operateIp != null">
+                #{operateIp,jdbcType=VARCHAR},
             </if>
         </trim>
     </insert>
@@ -153,8 +153,8 @@
             <if test="operatorTime != null">
                 operator_time = #{operatorTime,jdbcType=TIMESTAMP},
             </if>
-            <if test="operateId != null">
-                operate_id = #{operateId,jdbcType=VARCHAR},
+            <if test="operateIp != null">
+                operate_id = #{operateIp,jdbcType=VARCHAR},
             </if>
         </set>
         where id = #{id,jdbcType=INTEGER}
@@ -171,7 +171,7 @@
             remark        = #{remark,jdbcType=VARCHAR},
             operator      = #{operator,jdbcType=VARCHAR},
             operator_time = #{operatorTime,jdbcType=TIMESTAMP},
-            operate_id    = #{operateId,jdbcType=VARCHAR}
+            operate_id    = #{operateIp,jdbcType=VARCHAR}
         WHERE id = #{id,jdbcType=INTEGER}
     </update>
 </mapper>

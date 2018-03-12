@@ -4,6 +4,10 @@ import top.liujianwei.model.SysUser;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * 每次登录, 都将当前session中登陆的用户和当前request对象绑定, 当需要时再从中获取
+ * 每次访问返回时都要销毁当前线程的登录用户信息和request对象. 防止内存泄漏
+ */
 public class RequestHolder {
 
     private static final ThreadLocal<SysUser> userHolder = new ThreadLocal<SysUser>();

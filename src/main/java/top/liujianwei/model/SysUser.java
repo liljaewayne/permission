@@ -1,7 +1,16 @@
 package top.liujianwei.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
 import java.util.Date;
 
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class SysUser {
     private Integer id;
 
@@ -23,7 +32,7 @@ public class SysUser {
 
     private Date operateTime;
 
-    private String operateId;
+    private String operateIp;
 
     public Integer getId() {
         return id;
@@ -105,11 +114,11 @@ public class SysUser {
         this.operateTime = operateTime;
     }
 
-    public String getOperateId() {
-        return operateId;
+    public String getOperateIp() {
+        return operateIp;
     }
 
-    public void setOperateId(String operateId) {
-        this.operateId = operateId == null ? null : operateId.trim();
+    public void setOperateIp(String operateIp) {
+        this.operateIp = operateIp == null ? null : operateIp.trim();
     }
 }
