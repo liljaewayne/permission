@@ -1,7 +1,16 @@
 package top.liujianwei.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
 import java.util.Date;
 
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class SysDept {
     private Integer id;
 
@@ -15,11 +24,11 @@ public class SysDept {
 
     private String remark;
 
-    private String operator;
+    private String operator = "";// not null
 
-    private Date operateTime;
+    private Date operateTime = new Date();// not null
 
-    private String operateIp;
+    private String operateIp = "";// not null
 
     public Integer getId() {
         return id;

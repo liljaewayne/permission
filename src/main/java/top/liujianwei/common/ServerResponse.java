@@ -1,6 +1,5 @@
 package top.liujianwei.common;
 
-import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.map.annotate.JsonSerialize;
 
 import java.io.Serializable;
@@ -35,9 +34,7 @@ public class ServerResponse<T> implements Serializable {
         this.msg = msg;
     }
 
-    // 使之不在json序列化结果当中
-    @JsonIgnore
-    public boolean isSuccess() {
+    public boolean isRet() {
         return this.status == ResponseCode.SUCCESS.getCode();
     }
 
