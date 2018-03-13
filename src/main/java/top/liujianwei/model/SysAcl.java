@@ -1,7 +1,14 @@
 package top.liujianwei.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+
 import java.util.Date;
 
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class SysAcl {
     private Integer id;
 
@@ -23,7 +30,7 @@ public class SysAcl {
 
     private String operator;
 
-    private Date operatorTime;
+    private Date operateTime;
 
     private String operateIp;
 
@@ -107,12 +114,12 @@ public class SysAcl {
         this.operator = operator == null ? null : operator.trim();
     }
 
-    public Date getOperatorTime() {
-        return operatorTime;
+    public Date getOperateTime() {
+        return operateTime;
     }
 
-    public void setOperatorTime(Date operatorTime) {
-        this.operatorTime = operatorTime;
+    public void setOperateTime(Date operateTime) {
+        this.operateTime = operateTime;
     }
 
     public String getOperateIp() {
