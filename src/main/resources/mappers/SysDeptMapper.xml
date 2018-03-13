@@ -145,11 +145,18 @@
         from sys_dept
     </select>
 
-    <select id="getChildDeptListByLevel" resultMap="BaseResultMap">
+    <!--<select id="getChildDeptListByLevel" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
         from sys_dept
         WHERE level like #{level} || '.%'
+    </select>-->
+
+    <select id="listChildDeptListById" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM sys_dept
+        WHERE id=#{id}
     </select>
 
     <update id="batchUpdateLevel" parameterType="map">

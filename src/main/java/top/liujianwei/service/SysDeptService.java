@@ -67,7 +67,7 @@ public class SysDeptService {
         String newLevelPrefix = after.getLevel();
         String oldLevelPrefix = before.getLevel();
         if (!after.getLevel().equals(before.getLevel())) {
-            List<SysDept> deptList = sysDeptMapper.getChildDeptListByLevel(before.getLevel());
+            List<SysDept> deptList = sysDeptMapper.listChildDeptListById(before.getId());
             if (CollectionUtils.isNotEmpty(deptList)) {
                 for (SysDept dept : deptList) {
                     String level = dept.getLevel();
@@ -75,8 +75,11 @@ public class SysDeptService {
                         level = newLevelPrefix + level.substring(oldLevelPrefix.length());
                         dept.setLevel(level);
                     }
+
+                    sysDeptMapper.updateByPrimaryKey(dept);
                 }
-                sysDeptMapper.batchUpdateLevel(deptList);
+
+//                sysDeptMapper.batchUpdateLevel(deptList);
             }
         }
         sysDeptMapper.updateByPrimaryKey(after);

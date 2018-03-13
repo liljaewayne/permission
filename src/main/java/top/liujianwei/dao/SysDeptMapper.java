@@ -20,10 +20,15 @@ public interface SysDeptMapper {
 
     List<SysDept> getAllDept();
 
-    List<SysDept> getChildDeptListByLevel(@Param("level") String level);
+//    @Deprecated
+//    List<SysDept> getChildDeptListByLevel(@Param("level") String level);
+    
+    List<SysDept> listChildDeptListById(@Param("id") Integer id);
 
+    @Deprecated
+    // FIXME batch sql error
     void batchUpdateLevel(@Param("sysDeptList") List<SysDept> sysDeptList);
-
+    
     int countByNameAndParentId(@Param("parentId") Integer parentId, @Param("name") String name, @Param("id") Integer id);
 
     int countByParentId(@Param("deptId") int deptId);
